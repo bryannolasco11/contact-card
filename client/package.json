@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --mode development",
     "dev": "webpack-dev-server",
-    "start": "webpack --watch",
-    "heroku-postbuild": "webpack --config webpack.prod.js"
+    "start": "webpack --watch"
+    
   },
   "keyword": [],
   "author": "Bryan Nolasco",
