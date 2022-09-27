@@ -2,12 +2,13 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
-  "private": "true",
+  "private": true,
   "scripts": {
-    "dev": "webpack-dev-server",
     "build": "webpack --mode development",
+    "dev": "webpack-dev-server",
     "start": "webpack --watch"
   },
+  "keyword": [],
   "author": "Bryan Nolasco",
   "license": "ISC",
   "devDependencies": {
