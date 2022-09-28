@@ -15,8 +15,8 @@ export const clearForm = () => {
   document.getElementById("email").value = "";
 }
 
-const newContactButton = document.getElementById("new-contact");
+// const newContactButton = document.getElementById("new-contact");
 
-newContactButton.addEventListener('click', event => {
- toggleForm()
-})
+// newContactButton.addEventListener('click', event => {
+//  toggleForm()
+// })
