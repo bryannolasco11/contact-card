@@ -1,5 +1,4 @@
-//import "./form";
-//import "./submit";
+
 import { initDb, postDb, editDb, deleteDb } from './database';
 import { fetchCards } from './cards';
 import { toggleForm, clearForm } from "./form";
@@ -12,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../images/logo.png';
 import Bear from '../images/bear.png';
 import Dog from '../images/dog.png';
+
+
 
 window.addEventListener('load', function () {
     initDb();
@@ -44,14 +45,14 @@ form.addEventListener('submit', event => {
         postDb(name, email, phone, profile);
     } else {
 
-// Obtains values passed into the form element
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let email = document.getElementById("email").value;
-let profile = document.querySelector('input[type="radio"]:checked').value;
+        // Obtains values passed into the form element
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+        let profile = document.querySelector('input[type="radio"]:checked').value;
 
-// Calls the editDB function passing in any values from the form element as well as the ID of the contact that we are updating
-editDb(profileId, name, email, phone, profile);
+        // Calls the editDB function passing in any values from the form element as well as the ID of the contact that we are updating
+        editDb(profileId, name, email, phone, profile);
 
 
         fetchCards();
@@ -72,9 +73,9 @@ window.deleteCard = (e) => {
     let id = parseInt(e.id);
     // Delete the card
     deleteDb(id);
-      // Reload the DOM
+    // Reload the DOM
     fetchCards();
-  };
+};
 
 window.editCard = (e) => {
     //Grabs the id from the button element attached to the contact card and sets a blocal variable that will be used in the form element.
@@ -98,3 +99,9 @@ window.editCard = (e) => {
 // Import CSS files
 import "../css/index.css";
 
+if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js');
+    })
+};
